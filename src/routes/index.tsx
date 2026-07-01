@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import {
   Phone, Mail, MapPin, Globe, Menu, X, ArrowRight, Check, Star,
   Calculator, FlaskConical, Trophy, Bot, Cpu, Wrench, Users, GraduationCap,
@@ -84,16 +84,16 @@ const SLIDES = [
 
 function Index() {
   return (
-    <main id="home" className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <main id="home" className="min-h-screen bg-background text-foreground">
       <TopBar />
       <NavHeader />
-      <HeroCarousel />
-      <Programs />
-      <WhyChoose />
-      <SchoolPartnership />
-      <Gallery />
-      <Testimonials />
-      <Contact />
+      <Reveal><HeroCarousel /></Reveal>
+      <Reveal><Programs /></Reveal>
+      <Reveal><WhyChoose /></Reveal>
+      <Reveal><SchoolPartnership /></Reveal>
+      <Reveal><Gallery /></Reveal>
+      <Reveal><Testimonials /></Reveal>
+      <Reveal><Contact /></Reveal>
       <Footer />
     </main>
   );
@@ -764,6 +764,42 @@ function Footer() {
         <div>Science | Robotic | Maths</div>
       </div>
     </footer>
+  );
+}
+
+/* ---------------- Reveal on scroll ---------------- */
+function Reveal({ children }: { children: ReactNode }) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setVisible(true);
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <div
+      ref={ref}
+      style={{
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(40px)",
+        transition: "opacity 800ms ease-out, transform 800ms ease-out",
+        willChange: "opacity, transform",
+      }}
+    >
+      {children}
+    </div>
   );
 }
 
