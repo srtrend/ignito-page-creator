@@ -84,16 +84,16 @@ const SLIDES = [
 
 function Index() {
   return (
-    <main id="home" className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <main id="home" className="min-h-screen bg-background text-foreground">
       <TopBar />
       <NavHeader />
-      <HeroCarousel />
-      <Programs />
-      <WhyChoose />
-      <SchoolPartnership />
-      <Gallery />
-      <Testimonials />
-      <Contact />
+      <Reveal><HeroCarousel /></Reveal>
+      <Reveal><Programs /></Reveal>
+      <Reveal><WhyChoose /></Reveal>
+      <Reveal><SchoolPartnership /></Reveal>
+      <Reveal><Gallery /></Reveal>
+      <Reveal><Testimonials /></Reveal>
+      <Reveal><Contact /></Reveal>
       <Footer />
     </main>
   );
