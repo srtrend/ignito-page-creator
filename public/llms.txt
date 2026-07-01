@@ -1,9 +1,0 @@
-# I-SCRAM
-
-> Premium Science, Robotics and Mathematics education for school students and competitive exam preparation in Mumbai.
-
-I-SCRAM partners with schools to set up robotics labs, train teachers, and deliver STEM programs for students from Std 1 to 8. Programs include Mathematics Excellence, Science Learning, Robotics & STEM, and Competitive Exam Prep.
-
-## Pages
-
-- [Home](/): Overview of programs, school partnership, and contact.
