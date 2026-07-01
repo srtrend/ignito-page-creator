@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import {
   Phone, Mail, MapPin, Globe, Menu, X, ArrowRight, Check, Star,
@@ -21,65 +20,23 @@ import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
 import g5 from "@/assets/gallery-5.jpg";
 
-export const Route = createFileRoute("/")({
-  component: Index,
-  head: () => ({
-    meta: [
-      { title: "I-SCRAM | Science, Robotics & Maths for School Students" },
-      {
-        name: "description",
-        content:
-          "I-SCRAM is a premium STEM education brand delivering Science, Robotics and Mathematics programs for schools and competitive exam preparation.",
-      },
-      { property: "og:title", content: "I-SCRAM | Litmus Test for Competitive Exam" },
-      {
-        property: "og:description",
-        content:
-          "Building future innovators through Science, Robotics and Mathematics — school partnerships, robotics labs, teacher training and competitive exam prep.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://ignito-page-creator.lovable.app/" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-    links: [
-      { rel: "canonical", href: "https://ignito-page-creator.lovable.app/" },
-    ],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "LocalBusiness",
-          name: "I-SCRAM",
-          description:
-            "Premium Science, Robotics and Mathematics education for schools and competitive exam preparation.",
-          url: "https://ignito-page-creator.lovable.app/",
-          telephone: ["+91-77388-42774", "+91-77388-68774"],
-          email: "iscramindia@gmail.com",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Prabhadevi",
-            addressRegion: "Mumbai",
-            addressCountry: "IN",
-          },
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          itemListElement: [
-            { "@type": "Course", name: "Mathematics Excellence", description: "Arithmetic, logic and problem solving for Std 1–8.", provider: { "@type": "Organization", name: "I-SCRAM" } },
-            { "@type": "Course", name: "Science Learning", description: "Concept-first science with lab experiments and inquiry projects.", provider: { "@type": "Organization", name: "I-SCRAM" } },
-            { "@type": "Course", name: "Robotics & STEM", description: "Motors, sensors, coding and design thinking through robotics.", provider: { "@type": "Organization", name: "I-SCRAM" } },
-            { "@type": "Course", name: "Competitive Exam Prep", description: "Focused preparation for Olympiads and scholarships.", provider: { "@type": "Organization", name: "I-SCRAM" } },
-          ].map((c, i) => ({ "@type": "ListItem", position: i + 1, item: c })),
-        }),
-      },
-    ],
-  }),
-});
+export default function Index() {
+  return (
+    <main id="home" className="min-h-screen bg-background text-foreground">
+      <h1 className="sr-only">I-SCRAM — Science, Robotics and Mathematics education for schools</h1>
+      <TopBar />
+      <NavHeader />
+      <Reveal><HeroCarousel /></Reveal>
+      <Reveal><Programs /></Reveal>
+      <Reveal><WhyChoose /></Reveal>
+      <Reveal><SchoolPartnership /></Reveal>
+      <Reveal><Gallery /></Reveal>
+      <Reveal><Testimonials /></Reveal>
+      <Reveal><Contact /></Reveal>
+      <Footer />
+    </main>
+  );
+}
 
 const NAV = [
   { label: "Home", href: "#home" },
@@ -120,23 +77,6 @@ const SLIDES = [
   },
 ];
 
-function Index() {
-  return (
-    <main id="home" className="min-h-screen bg-background text-foreground">
-      <h1 className="sr-only">I-SCRAM — Science, Robotics and Mathematics education for schools</h1>
-      <TopBar />
-      <NavHeader />
-      <Reveal><HeroCarousel /></Reveal>
-      <Reveal><Programs /></Reveal>
-      <Reveal><WhyChoose /></Reveal>
-      <Reveal><SchoolPartnership /></Reveal>
-      <Reveal><Gallery /></Reveal>
-      <Reveal><Testimonials /></Reveal>
-      <Reveal><Contact /></Reveal>
-      <Footer />
-    </main>
-  );
-}
 
 /* ---------------- Top bar ---------------- */
 function TopBar() {
