@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ignito-page-creator.lovable.app/sitemap.xml
