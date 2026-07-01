@@ -38,7 +38,45 @@ export const Route = createFileRoute("/")({
           "Building future innovators through Science, Robotics and Mathematics — school partnerships, robotics labs, teacher training and competitive exam prep.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://ignito-page-creator.lovable.app/" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://ignito-page-creator.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "I-SCRAM",
+          description:
+            "Premium Science, Robotics and Mathematics education for schools and competitive exam preparation.",
+          url: "https://ignito-page-creator.lovable.app/",
+          telephone: ["+91-77388-42774", "+91-77388-68774"],
+          email: "iscramindia@gmail.com",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Prabhadevi",
+            addressRegion: "Mumbai",
+            addressCountry: "IN",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          itemListElement: [
+            { "@type": "Course", name: "Mathematics Excellence", description: "Arithmetic, logic and problem solving for Std 1–8.", provider: { "@type": "Organization", name: "I-SCRAM" } },
+            { "@type": "Course", name: "Science Learning", description: "Concept-first science with lab experiments and inquiry projects.", provider: { "@type": "Organization", name: "I-SCRAM" } },
+            { "@type": "Course", name: "Robotics & STEM", description: "Motors, sensors, coding and design thinking through robotics.", provider: { "@type": "Organization", name: "I-SCRAM" } },
+            { "@type": "Course", name: "Competitive Exam Prep", description: "Focused preparation for Olympiads and scholarships.", provider: { "@type": "Organization", name: "I-SCRAM" } },
+          ].map((c, i) => ({ "@type": "ListItem", position: i + 1, item: c })),
+        }),
+      },
     ],
   }),
 });
@@ -85,6 +123,7 @@ const SLIDES = [
 function Index() {
   return (
     <main id="home" className="min-h-screen bg-background text-foreground">
+      <h1 className="sr-only">I-SCRAM — Science, Robotics and Mathematics education for schools</h1>
       <TopBar />
       <NavHeader />
       <Reveal><HeroCarousel /></Reveal>
@@ -237,9 +276,9 @@ function HeroCarousel() {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs md:text-sm font-medium uppercase tracking-wider">
                   <Sparkles className="w-3.5 h-3.5" /> {s.eyebrow}
                 </div>
-                <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
+                <h2 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
                   {s.title}
-                </h1>
+                </h2>
                 <p className="mt-6 text-lg md:text-xl text-white/85 max-w-xl">
                   {s.subtitle}
                 </p>
@@ -343,7 +382,7 @@ function Programs() {
               <h3 className="text-lg font-bold text-foreground">{p.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
               <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn more <ArrowRight className="w-4 h-4" />
+                Explore program details <ArrowRight className="w-4 h-4" />
               </div>
             </div>
           ))}
