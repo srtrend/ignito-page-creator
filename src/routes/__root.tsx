@@ -77,14 +77,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "I-SCRAM | Science, Robotics & Maths for School Students" },
+      {
+        name: "description",
+        content:
+          "I-SCRAM — Litmus Test for Competitive Exam. Premium Science, Robotics and Mathematics programs for schools and students in Mumbai.",
+      },
+      { property: "og:title", content: "I-SCRAM | Litmus Test for Competitive Exam" },
+      {
+        property: "og:description",
+        content:
+          "Building future innovators through Science, Robotics and Mathematics — school partnerships, robotics labs and competitive exam preparation.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
