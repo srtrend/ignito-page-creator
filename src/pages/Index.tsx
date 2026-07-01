@@ -77,23 +77,6 @@ const SLIDES = [
   },
 ];
 
-function Index() {
-  return (
-    <main id="home" className="min-h-screen bg-background text-foreground">
-      <h1 className="sr-only">I-SCRAM — Science, Robotics and Mathematics education for schools</h1>
-      <TopBar />
-      <NavHeader />
-      <Reveal><HeroCarousel /></Reveal>
-      <Reveal><Programs /></Reveal>
-      <Reveal><WhyChoose /></Reveal>
-      <Reveal><SchoolPartnership /></Reveal>
-      <Reveal><Gallery /></Reveal>
-      <Reveal><Testimonials /></Reveal>
-      <Reveal><Contact /></Reveal>
-      <Footer />
-    </main>
-  );
-}
 
 /* ---------------- Top bar ---------------- */
 function TopBar() {
