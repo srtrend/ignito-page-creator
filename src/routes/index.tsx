@@ -276,9 +276,9 @@ function HeroCarousel() {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-dark text-xs md:text-sm font-medium uppercase tracking-wider">
                   <Sparkles className="w-3.5 h-3.5" /> {s.eyebrow}
                 </div>
-                <h1 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
+                <h2 className="mt-6 text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight">
                   {s.title}
-                </h1>
+                </h2>
                 <p className="mt-6 text-lg md:text-xl text-white/85 max-w-xl">
                   {s.subtitle}
                 </p>
