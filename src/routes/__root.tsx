@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "I-SCRAM — Litmus Test for Competitive Exam. Premium Science, Robotics and Mathematics programs for schools and students in Mumbai.",
       },
-      { property: "og:title", content: "I-SCRAM | Litmus Test for Competitive Exam" },
+      { property: "og:title", content: "I-SCRAM | Science, Robotics & Maths for School Students" },
       {
         property: "og:description",
         content:
@@ -92,6 +92,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "I-SCRAM | Science, Robotics & Maths for School Students" },
+      { name: "description", content: "I-SCRAM offers STEM education for students, focusing on science, robotics, and math for competitive exams." },
+      { property: "og:description", content: "I-SCRAM offers STEM education for students, focusing on science, robotics, and math for competitive exams." },
+      { name: "twitter:description", content: "I-SCRAM offers STEM education for students, focusing on science, robotics, and math for competitive exams." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4b1ead37-625f-42fb-89af-b90fe43c8264/id-preview-48277125--463dd70e-901b-483c-98bd-7dbb8c2cf9dc.lovable.app-1782898781026.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4b1ead37-625f-42fb-89af-b90fe43c8264/id-preview-48277125--463dd70e-901b-483c-98bd-7dbb8c2cf9dc.lovable.app-1782898781026.png" },
     ],
     links: [
       {
