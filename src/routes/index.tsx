@@ -382,7 +382,7 @@ function Programs() {
               <h3 className="text-lg font-bold text-foreground">{p.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
               <div className="mt-5 flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn more <ArrowRight className="w-4 h-4" />
+                Explore program details <ArrowRight className="w-4 h-4" />
               </div>
             </div>
           ))}
