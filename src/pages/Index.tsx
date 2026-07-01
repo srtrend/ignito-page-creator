@@ -27,8 +27,9 @@ export default function Index() {
       <TopBar />
       <NavHeader />
       <Reveal><HeroCarousel /></Reveal>
-      <Reveal><Programs /></Reveal>
       <Reveal><WhyChoose /></Reveal>
+      <Reveal><Programs /></Reveal>
+      <div id="robotics" className="scroll-mt-24" />
       <Reveal><SchoolPartnership /></Reveal>
       <Reveal><Gallery /></Reveal>
       <Reveal><Testimonials /></Reveal>
