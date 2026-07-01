@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import {
   Phone, Mail, MapPin, Globe, Menu, X, ArrowRight, Check, Star,
   Calculator, FlaskConical, Trophy, Bot, Cpu, Wrench, Users, GraduationCap,
