@@ -176,10 +176,17 @@ function NavHeader() {
                 <a key={n.href} href={n.href} onClick={() => setOpen(false)} className={cls}>{n.label}</a>
               );
             })}
+            <Link
+              to="/downloads"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-primary text-primary px-5 py-2.5 text-sm font-semibold"
+            >
+              Downloads <ArrowRight className="w-4 h-4" />
+            </Link>
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full gradient-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold"
+              className="inline-flex items-center justify-center gap-2 rounded-full gradient-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold"
             >
               Enquire Now <ArrowRight className="w-4 h-4" />
             </a>
