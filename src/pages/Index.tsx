@@ -30,6 +30,7 @@ export default function Index() {
       <Reveal><HeroCarousel /></Reveal>
       <Reveal><WhyChoose /></Reveal>
       <Reveal><Programs /></Reveal>
+      <Reveal><Robotics /></Reveal>
       <Reveal><SchoolPartnership /></Reveal>
       <Reveal><Gallery /></Reveal>
       <Reveal><Testimonials /></Reveal>
@@ -44,7 +45,7 @@ const NAV: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Programs", href: "#programs" },
-  { label: "Downloads", href: "/downloads", to: "/downloads" },
+  { label: "Robotics", href: "#robotics" },
   { label: "Schools", href: "#schools" },
   { label: "Contact", href: "#contact" },
 ];
@@ -142,6 +143,12 @@ function NavHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <Link
+            to="/downloads"
+            className="hidden md:inline-flex items-center gap-2 rounded-full border border-primary text-primary px-5 py-2.5 text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all hover:-translate-y-0.5"
+          >
+            Downloads <ArrowRight className="w-4 h-4" />
+          </Link>
           <a
             href="#contact"
             className="hidden md:inline-flex items-center gap-2 rounded-full gradient-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold shadow-elegant hover:opacity-95 transition-all hover:-translate-y-0.5"
@@ -169,10 +176,17 @@ function NavHeader() {
                 <a key={n.href} href={n.href} onClick={() => setOpen(false)} className={cls}>{n.label}</a>
               );
             })}
+            <Link
+              to="/downloads"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full border border-primary text-primary px-5 py-2.5 text-sm font-semibold"
+            >
+              Downloads <ArrowRight className="w-4 h-4" />
+            </Link>
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-full gradient-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold"
+              className="inline-flex items-center justify-center gap-2 rounded-full gradient-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold"
             >
               Enquire Now <ArrowRight className="w-4 h-4" />
             </a>
@@ -330,6 +344,45 @@ function Programs() {
     </section>
   );
 }
+
+/* ---------------- Robotics ---------------- */
+const ROBOTICS_ITEMS = [
+  { icon: Bot, title: "Robotics Kits" },
+  { icon: Cog, title: "Motorized Models" },
+  { icon: FlaskConical, title: "STEM Learning Activities" },
+  { icon: Cpu, title: "Coding Basics" },
+  { icon: Wrench, title: "Practical Robotics Projects" },
+  { icon: Users, title: "Teacher Training & School Workshops" },
+];
+
+function Robotics() {
+  return (
+    <section id="robotics" className="py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeader
+          eyebrow="Robotics & Motorized Training"
+          title="Complete robotics assistance for schools"
+          desc="From kits and motorized models to coding, projects, and teacher training — everything schools need to bring STEM to life."
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {ROBOTICS_ITEMS.map((p, i) => (
+            <div
+              key={p.title}
+              className="group bg-card rounded-2xl p-6 border border-border shadow-soft hover:shadow-elegant hover:-translate-y-1 transition-all animate-fade-up flex items-center gap-4"
+              style={{ animationDelay: `${i * 60}ms` }}
+            >
+              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shadow-soft shrink-0 group-hover:scale-110 transition-transform">
+                <p.icon className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h3 className="text-base font-semibold text-foreground">{p.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 /* ---------------- Why Choose ---------------- */
 const WHY = [
