@@ -345,6 +345,45 @@ function Programs() {
   );
 }
 
+/* ---------------- Robotics ---------------- */
+const ROBOTICS_ITEMS = [
+  { icon: Bot, title: "Robotics Kits" },
+  { icon: Cog, title: "Motorized Models" },
+  { icon: FlaskConical, title: "STEM Learning Activities" },
+  { icon: Cpu, title: "Coding Basics" },
+  { icon: Wrench, title: "Practical Robotics Projects" },
+  { icon: Users, title: "Teacher Training & School Workshops" },
+];
+
+function Robotics() {
+  return (
+    <section id="robotics" className="py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeader
+          eyebrow="Robotics & Motorized Training"
+          title="Complete robotics assistance for schools"
+          desc="From kits and motorized models to coding, projects, and teacher training — everything schools need to bring STEM to life."
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {ROBOTICS_ITEMS.map((p, i) => (
+            <div
+              key={p.title}
+              className="group bg-card rounded-2xl p-6 border border-border shadow-soft hover:shadow-elegant hover:-translate-y-1 transition-all animate-fade-up flex items-center gap-4"
+              style={{ animationDelay: `${i * 60}ms` }}
+            >
+              <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center shadow-soft shrink-0 group-hover:scale-110 transition-transform">
+                <p.icon className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <h3 className="text-base font-semibold text-foreground">{p.title}</h3>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+
 /* ---------------- Why Choose ---------------- */
 const WHY = [
   "Experienced Trainers",
