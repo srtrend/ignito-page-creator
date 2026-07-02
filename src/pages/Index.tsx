@@ -467,8 +467,9 @@ const GALLERY = [
 
 function Gallery() {
   const items = [...GALLERY, ...GALLERY];
+  const [paused, setPaused] = useState(false);
   return (
-    <section id="robotics" className="py-24 md:py-32 overflow-hidden">
+    <section className="py-24 md:py-32 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeader
           eyebrow="Learning Gallery"
@@ -477,8 +478,17 @@ function Gallery() {
         />
       </div>
 
-      <div className="mt-14 relative">
-        <div className="flex gap-6 animate-marquee w-max">
+      <div
+        className="mt-14 relative"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setPaused(false)}
+      >
+        <div
+          className="flex gap-6 animate-marquee w-max"
+          style={{ animationPlayState: paused ? "paused" : "running" }}
+        >
           {items.map((it, idx) => (
             <div
               key={idx}
