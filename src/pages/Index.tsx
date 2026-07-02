@@ -131,15 +131,14 @@ function NavHeader() {
         </a>
 
         <nav className="hidden lg:flex items-center gap-8">
-          {NAV.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
-              className="text-sm font-medium text-foreground/75 hover:text-primary transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-            >
-              {n.label}
-            </a>
-          ))}
+          {NAV.map((n) => {
+            const cls = "text-sm font-medium text-foreground/75 hover:text-primary transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full";
+            return n.to ? (
+              <Link key={n.href} to={n.to} className={cls}>{n.label}</Link>
+            ) : (
+              <a key={n.href} href={n.href} className={cls}>{n.label}</a>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -162,16 +161,14 @@ function NavHeader() {
       {open && (
         <div className="lg:hidden border-t border-border bg-background/95 backdrop-blur">
           <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-3">
-            {NAV.map((n) => (
-              <a
-                key={n.href}
-                href={n.href}
-                onClick={() => setOpen(false)}
-                className="text-base font-medium text-foreground/80 hover:text-primary py-1.5"
-              >
-                {n.label}
-              </a>
-            ))}
+            {NAV.map((n) => {
+              const cls = "text-base font-medium text-foreground/80 hover:text-primary py-1.5";
+              return n.to ? (
+                <Link key={n.href} to={n.to} onClick={() => setOpen(false)} className={cls}>{n.label}</Link>
+              ) : (
+                <a key={n.href} href={n.href} onClick={() => setOpen(false)} className={cls}>{n.label}</a>
+              );
+            })}
             <a
               href="#contact"
               onClick={() => setOpen(false)}
