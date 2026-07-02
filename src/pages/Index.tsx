@@ -30,6 +30,7 @@ export default function Index() {
       <Reveal><HeroCarousel /></Reveal>
       <Reveal><WhyChoose /></Reveal>
       <Reveal><Programs /></Reveal>
+      <Reveal><Robotics /></Reveal>
       <Reveal><SchoolPartnership /></Reveal>
       <Reveal><Gallery /></Reveal>
       <Reveal><Testimonials /></Reveal>
@@ -44,7 +45,7 @@ const NAV: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Programs", href: "#programs" },
-  { label: "Downloads", href: "/downloads", to: "/downloads" },
+  { label: "Robotics", href: "#robotics" },
   { label: "Schools", href: "#schools" },
   { label: "Contact", href: "#contact" },
 ];
