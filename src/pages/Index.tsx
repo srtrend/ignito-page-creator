@@ -143,6 +143,12 @@ function NavHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <Link
+            to="/downloads"
+            className="hidden md:inline-flex items-center gap-2 rounded-full border border-primary text-primary px-5 py-2.5 text-sm font-semibold hover:bg-primary hover:text-primary-foreground transition-all hover:-translate-y-0.5"
+          >
+            Downloads <ArrowRight className="w-4 h-4" />
+          </Link>
           <a
             href="#contact"
             className="hidden md:inline-flex items-center gap-2 rounded-full gradient-primary text-primary-foreground px-5 py-2.5 text-sm font-semibold shadow-elegant hover:opacity-95 transition-all hover:-translate-y-0.5"
