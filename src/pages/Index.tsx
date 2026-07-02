@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+import { Link } from "react-router-dom";
 import {
   Phone, Mail, MapPin, Globe, Menu, X, ArrowRight, Check, Star,
   Calculator, FlaskConical, Trophy, Bot, Cpu, Wrench, Users, GraduationCap,
@@ -29,7 +30,6 @@ export default function Index() {
       <Reveal><HeroCarousel /></Reveal>
       <Reveal><WhyChoose /></Reveal>
       <Reveal><Programs /></Reveal>
-      <div id="robotics" className="scroll-mt-24" />
       <Reveal><SchoolPartnership /></Reveal>
       <Reveal><Gallery /></Reveal>
       <Reveal><Testimonials /></Reveal>
@@ -39,11 +39,12 @@ export default function Index() {
   );
 }
 
-const NAV = [
+type NavItem = { label: string; href: string; to?: string };
+const NAV: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Programs", href: "#programs" },
-  { label: "Robotics", href: "#robotics" },
+  { label: "Downloads", href: "/downloads", to: "/downloads" },
   { label: "Schools", href: "#schools" },
   { label: "Contact", href: "#contact" },
 ];
