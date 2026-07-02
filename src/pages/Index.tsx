@@ -726,9 +726,11 @@ function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             {NAV.map((n) => (
               <li key={n.href}>
-                <a href={n.href} className="text-white/80 hover:text-white transition">
-                  {n.label}
-                </a>
+                {n.to ? (
+                  <Link to={n.to} className="text-white/80 hover:text-white transition">{n.label}</Link>
+                ) : (
+                  <a href={n.href} className="text-white/80 hover:text-white transition">{n.label}</a>
+                )}
               </li>
             ))}
           </ul>
